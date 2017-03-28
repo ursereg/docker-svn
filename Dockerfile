@@ -10,7 +10,7 @@ ENV APACHE_LOG_DIR     /var/log/apache2
 RUN apt-get -y update && apt-get install -y subversion apache2 libapache2-mod-svn libapache2-svn libsvn-dev
 RUN /usr/sbin/a2enmod dav
 RUN /usr/sbin/a2enmod dav_svn
-RUN /usr/sbin/a2enmod a2enmod ldap
+RUN /usr/sbin/a2enmod ldap
 RUN /usr/sbin/a2enmod authnz_ldap
 RUN service apache2 restart
 
