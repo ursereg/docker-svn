@@ -12,14 +12,13 @@ To run this container
 
     $ svnadmin create /svn/your_new_repo
 
-# Directories
+# Directories/Volumes
 
 `data` is used to store your SVN repository
 
-`config` contains optional configuration for apache. For example you could add all your ldap permissions here
+`config/apache` contains optional configuration for apache. For example you could add all your ldap permissions here
 
-
-`config/website.conf
+`config/apache/website.conf`
 
     <Location /svn/website>
         DAV svn
@@ -38,3 +37,10 @@ To run this container
             </RequireAny>
         </RequireAll>
     </Location>
+ 
+ 
+ `/etc/cron.d` this gives the abilty to add cron jobs to this container
+ 
+ # References
+ 
+ [LDAP to AUTHZ](https://github.com/whitlockjc/sync-ldap-groups-to-svn-authz) you might want to use this to generate authz files
