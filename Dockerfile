@@ -28,7 +28,7 @@ RUN chmod -R g+rws /svn
 RUN touch /var/log/cron.log
 
 COPY config/apache-default.conf /etc/apache2/sites-available/000-default.conf
-COPY scripts/ldap_to_authz.py /ldap_to_authz.py
+COPY script/ldap_to_authz.py /ldap_to_authz.py
 
 # Configure Apache to serve up Subversion
 RUN /usr/sbin/a2enmod auth_digest
