@@ -115,7 +115,8 @@ def bind():
 
   ldapobject = ldap.initialize(url)
 
-  ldapobject.bind_s(bind_dn, bind_password)
+  # Fixes binding without PWD
+  ldapobject.bind(bind_dn, bind_password)
 
   if verbose:
     if is_outfile_specified:
