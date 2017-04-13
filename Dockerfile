@@ -26,7 +26,7 @@ RUN chown -R www-data:subversion /svn
 RUN chmod -R g+rws /svn
 RUN touch /var/log/cron.log
 
-RUN echo 0 * * * * /config/scripts/cron.sh > /dev/null 2>&1 >> /etc/crontab
+RUN echo "0 * * * * /config/scripts/cron.sh > /dev/null 2>&1" >> /etc/crontab
 
 COPY config/apache-default.conf /etc/apache2/sites-available/000-default.conf
 COPY script/ldap_to_authz.py /ldap_to_authz.py
