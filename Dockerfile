@@ -18,6 +18,7 @@ RUN service apache2 restart
 
 VOLUME /svn
 VOLUME /config
+VOLUME /etc/cron.d
 
 # Set permissions
 RUN addgroup subversion
