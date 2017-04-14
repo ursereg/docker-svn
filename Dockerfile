@@ -31,10 +31,11 @@ RUN echo "0 * * * * /config/scripts/cron.sh > /dev/null 2>&1" >> /etc/crontab
 
 COPY config/apache-default.conf /etc/apache2/sites-available/000-default.conf
 COPY script/ldap_to_authz.py /ldap_to_authz.py
+COPY scripts/start.sh /start.sh
 
 # Configure Apache to serve up Subversion
 RUN /usr/sbin/a2enmod auth_digest
 
 EXPOSE 80
 
-CMD ["/usr/sbin/apache2", "-DFOREGROUND"]
+CMD ["/start.sh"]
