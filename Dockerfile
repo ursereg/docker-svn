@@ -7,7 +7,7 @@ ENV APACHE_RUN_DIR     /var/run/apache2
 ENV APACHE_LOCK_DIR    /var/lock/apache2
 ENV APACHE_LOG_DIR     /var/log/apache2
 
-RUN apt-get -y update && apt-get install -y subversion apache2 libapache2-mod-svn libapache2-svn libsvn-dev
+RUN apt-get -y update && apt-get install -y subversion apache2 libapache2-mod-svn libsvn-dev
 RUN apt-get -y update && apt-get install -y cron
 RUN apt-get -y update && apt-get install -y python python-ldap
 RUN /usr/sbin/a2enmod dav
